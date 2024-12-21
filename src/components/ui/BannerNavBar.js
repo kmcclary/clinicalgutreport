@@ -219,11 +219,18 @@ const BannerNavBar = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-yellow-300 via-yellow-300 to-yellow-500 p-1 w-full fixed top-0 left-0 z-50">
+    <div className="bg-gradient-to-br from-yellow-300 via-yellow-300 to-yellow-500 p-1 w-full fixed top-0 left-0 z-50 shadow-md">
       <div className="flex items-center justify-between flex-nowrap">
         <Link to="/">
           <img src={Logo} alt="Zymo Logo with Banner" className="h-8 flex-shrink-0" />
         </Link>
+        <div className="flex items-center ml-2">
+          <div className="h-6 w-px bg-black/30 mx-1" />
+          <span className="pl-2 text-xl text-black font-bold">
+            GutSignature<sup className="text-sm">TM</sup>
+            <span className="text-xs text-black/70 font-normal pl-2">Complete Health Analysis</span>
+          </span>
+        </div>
         <nav className="flex-shrink-0 ml-auto overflow-x-hidden">
           <ul className="flex space-x-1 px-1">
             <MainButton 

@@ -73,7 +73,7 @@ const GutMicrobiotaComposition = ({
 
 
     return (
-      <div className="relative w-full h-6 rounded-full overflow-hidden bg-gray-200">
+      <div className="relative w-full h-3 rounded-full overflow-hidden bg-gray-200">
         <div 
           className={`${gradientClass} h-full absolute left-0 top-0`} 
           style={{width: `${percentage}%`}}
@@ -93,7 +93,7 @@ const GutMicrobiotaComposition = ({
           <span className="text-gray-800 font-medium">{label}</span>
           <span className="text-xs text-gray-500">{value.toFixed(1)}</span>
         </div>
-        <div className="relative w-full h-6 rounded-full overflow-hidden bg-gray-200">
+        <div className="relative w-full h-3 rounded-full overflow-hidden bg-gray-200">
           <div 
             className={`${gradientClass} h-full absolute left-0 top-0`} 
             style={{width: `${percentage}%`}}
