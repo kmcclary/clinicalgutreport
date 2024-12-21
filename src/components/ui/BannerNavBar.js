@@ -228,7 +228,6 @@ const BannerNavBar = () => {
           <div className="h-6 w-px bg-black/30 mx-1" />
           <span className="pl-2 text-xl text-black font-bold">
             GutSignature<sup className="text-sm">TM</sup>
-            <span className="text-xs text-black/70 font-normal pl-2">Complete Health Analysis</span>
           </span>
         </div>
         <nav className="flex-shrink-0 ml-auto overflow-x-hidden">
