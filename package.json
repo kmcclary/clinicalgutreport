@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://kmcclary.github.io/guthealthreport",
+  "homepage": "https://kmcclary.github.io/clinicalgutreport",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/Card';
-import { 
-  AlertCircle, 
+import {
+  AlertCircle,
   Microscope,
   Timer,
   Utensils,
@@ -105,6 +105,7 @@ const expandedPathogenData = [
   }
 ];
 
+// Color-coded badge for pathogen severity
 const SeverityBadge = ({ severity }) => {
   const colors = {
     low: "bg-yellow-100 text-yellow-800 border-yellow-200",
@@ -123,15 +124,18 @@ const PathogenCard = ({ pathogen }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-      <div 
+    <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl">
+      {/* Card Header (clickable) */}
+      <div
         className="p-4 cursor-pointer hover:bg-gray-50 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <Bug className="h-5 w-5 text-red-600" />
-            <span className="text-red-700 font-semibold">{pathogen.name}</span>
+            <span className="text-red-700 font-semibold">
+              {pathogen.name}
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <SeverityBadge severity={pathogen.severity} />
@@ -142,21 +146,31 @@ const PathogenCard = ({ pathogen }) => {
             )}
           </div>
         </div>
-        <p className="text-gray-700 text-sm">{pathogen.description}</p>
+        <p className="text-sm text-gray-700">
+          {pathogen.description}
+        </p>
       </div>
 
+      {/* Expanded Content */}
       {isExpanded && (
         <div className="px-4 pb-4 border-t border-gray-100">
           <div className="mt-4 space-y-4">
+            {/* Detailed Information */}
             <div className="bg-blue-50 p-3 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
                 <Microscope className="h-4 w-4 text-blue-600" />
-                <span className="font-medium text-blue-800">Detailed Information</span>
+                <span className="font-medium text-blue-800">
+                  Detailed Information
+                </span>
               </div>
-              <p className="text-sm text-blue-800">{pathogen.detailedInfo}</p>
+              <p className="text-sm text-blue-800">
+                {pathogen.detailedInfo}
+              </p>
             </div>
 
+            {/* Common Sources & Symptoms */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Common Sources */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <Utensils className="h-4 w-4 text-gray-600" />
@@ -169,6 +183,7 @@ const PathogenCard = ({ pathogen }) => {
                 </ul>
               </div>
 
+              {/* Symptoms */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <HeartPulse className="h-4 w-4 text-gray-600" />
@@ -182,6 +197,7 @@ const PathogenCard = ({ pathogen }) => {
               </div>
             </div>
 
+            {/* Prevention Tips */}
             <div className="border-t border-gray-200 pt-4">
               <div className="flex items-center gap-2 mb-2">
                 <ChefHat className="h-4 w-4 text-gray-600" />
@@ -194,15 +210,20 @@ const PathogenCard = ({ pathogen }) => {
               </ul>
             </div>
 
+            {/* Incubation, Duration, Risk Level */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+              {/* Incubation Period */}
               <div className="bg-gray-50 p-3 rounded-lg">
                 <div className="flex items-center gap-2 text-gray-700">
                   <Timer className="h-4 w-4" />
                   <span>Incubation Period</span>
                 </div>
-                <p className="mt-1 font-medium">{pathogen.incubationPeriod}</p>
+                <p className="mt-1 font-medium">
+                  {pathogen.incubationPeriod}
+                </p>
               </div>
-              
+
+              {/* Duration */}
               <div className="bg-gray-50 p-3 rounded-lg">
                 <div className="flex items-center gap-2 text-gray-700">
                   <ThermometerSun className="h-4 w-4" />
@@ -211,6 +232,7 @@ const PathogenCard = ({ pathogen }) => {
                 <p className="mt-1 font-medium">{pathogen.duration}</p>
               </div>
 
+              {/* Risk Level */}
               <div className="bg-gray-50 p-3 rounded-lg">
                 <div className="flex items-center gap-2 text-gray-700">
                   <AlertCircle className="h-4 w-4" />
@@ -232,53 +254,67 @@ const PathogenDetection = () => {
   }
 
   return (
-    <Card className="rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-xl border border-red-200">
+    <Card className="rounded-xl bg-gradient-to-br from-white to-red-50 shadow-xl border border-gray-200 border-t-4 border-t-red-600 shadow-xl">
       <CardHeader className="p-4">
         <CardTitle className="flex items-center gap-2">
           <AlertCircle className="h-6 w-6 text-red-600" />
-          <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent text-lg font-semibold">
+          <span className="text-gray-800 text-xl">
             Potential Pathogens Detected
           </span>
         </CardTitle>
       </CardHeader>
+
       <CardContent className="px-4 pb-6 space-y-6">
-        <div className="bg-white p-4 rounded-lg border border-red-100">
+        {/* Intro Box */}
+        <div className="bg-white p-4 rounded-lg border border-red-100 shadow-lg">
           <div className="flex items-start gap-3">
             <Info className="h-5 w-5 text-red-600 mt-0.5" />
             <div className="space-y-2">
               <p className="text-gray-700 text-sm leading-relaxed">
-                Your gut microbiome analysis has identified potential pathogens that may affect your digestive health. While their presence doesn't always indicate active infection, understanding these findings can help maintain optimal gut health.
+                Your gut microbiome analysis has identified potential pathogens 
+                that may affect your digestive health. While their presence 
+                doesn't always indicate active infection, understanding these 
+                findings can help maintain optimal gut health.
               </p>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Click on each pathogen below to learn more about its potential impact, prevention strategies, and recommended actions.
+                Click on each pathogen below to learn more about its potential 
+                impact, prevention strategies, and recommended actions.
               </p>
             </div>
           </div>
         </div>
 
+        {/* Pathogen Cards */}
         <div className="space-y-4">
           {expandedPathogenData.map((pathogen, index) => (
             <PathogenCard key={index} pathogen={pathogen} />
           ))}
         </div>
 
-        <div className="bg-white p-4 rounded-lg border border-gray-100">
+        {/* General Recommended Actions */}
+        <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-lg">
           <div className="flex items-center gap-2 mb-2">
             <Pill className="h-5 w-5 text-green-600" />
-            <span className="font-medium text-green-800">Recommended Actions</span>
+            <span className="font-medium text-green-800">
+              Recommended Actions
+            </span>
           </div>
           <div className="space-y-2 text-sm text-gray-800">
             <p>
-              1. <strong>Monitor Symptoms:</strong> Keep track of any digestive issues or changes in your health.
+              1. <strong>Monitor Symptoms:</strong> Keep track of any digestive
+              issues or changes in your health.
             </p>
             <p>
-              2. <strong>Dietary Adjustments:</strong> Focus on whole foods, fermented products, and proper food handling.
+              2. <strong>Dietary Adjustments:</strong> Focus on whole foods,
+              fermented products, and proper food handling.
             </p>
             <p>
-              3. <strong>Seek Professional Guidance:</strong> Consider consulting a healthcare provider for personalized advice.
+              3. <strong>Seek Professional Guidance:</strong> Consider
+              consulting a healthcare provider for personalized advice.
             </p>
             <p>
-              4. <strong>Follow-up Testing:</strong> Regular monitoring can help track improvements in your gut health.
+              4. <strong>Follow-up Testing:</strong> Regular monitoring can help
+              track improvements in your gut health.
             </p>
           </div>
         </div>

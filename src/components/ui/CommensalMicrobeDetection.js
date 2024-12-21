@@ -187,7 +187,7 @@ const MicrobeCard = ({ microbe }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl">
       <div 
         className="p-4 cursor-pointer hover:bg-gray-50 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -286,11 +286,11 @@ const MicrobeCard = ({ microbe }) => {
 
 const CommensalMicrobeDetection = () => {
   return (
-    <Card className="rounded-xl bg-gradient-to-br from-green-50 to-green-100 shadow-xl border border-green-200">
+    <Card className="rounded-xl bg-gradient-to-br from-white to-emerald-50 shadow-xl border border-gray-200 border-t-4 border-t-emerald-600 shadow-xl">
       <CardHeader className="p-4">
         <CardTitle className="flex items-center gap-2">
           <Leaf className="h-6 w-6 text-green-600" />
-          <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent text-lg font-semibold">
+          <span className="text-gray-800 text-xl">
             Beneficial Microbe Analysis
           </span>
         </CardTitle>
@@ -299,7 +299,7 @@ const CommensalMicrobeDetection = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="px-4 pb-6 space-y-6">
-        <div className="bg-white p-4 rounded-lg border border-green-100">
+        <div className="bg-white p-4 rounded-lg border border-green-100 shadow-lg">
           <div className="flex items-start gap-3">
             <Info className="h-5 w-5 text-green-600 mt-0.5" />
             <div className="space-y-2">
@@ -319,7 +319,7 @@ const CommensalMicrobeDetection = () => {
           ))}
         </div>
 
-        <div className="bg-white p-4 rounded-lg border border-emerald-100">
+        <div className="bg-white p-4 rounded-lg border border-emerald-100 shadow-lg">
           <div className="flex items-center gap-2 mb-2">
             <Pill className="h-5 w-5 text-emerald-600" />
             <span className="font-medium text-emerald-800">Recommendations for Optimal Microbiome Health</span>

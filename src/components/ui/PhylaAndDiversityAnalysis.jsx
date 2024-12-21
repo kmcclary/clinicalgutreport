@@ -332,71 +332,7 @@ const PhylaAndDiversityAnalysis = () => {
           )}
         </section>
 
-        {/* References */}
-        <section className="bg-white p-4 rounded-lg border border-gray-200">
-          <button 
-            onClick={() => toggleSection('references')}
-            className="w-full flex items-center justify-between mb-2"
-          >
-            <div className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-gray-700" />
-              <h2 className="font-medium text-gray-900 text-lg">References</h2>
-            </div>
-            {expandedSections.references ? 
-              <ChevronDown className="h-4 w-4 text-gray-700" /> : 
-              <ChevronRight className="h-4 w-4 text-gray-700" />
-            }
-          </button>
 
-          {expandedSections.references && (
-            <div className="space-y-3 mt-4 text-sm text-gray-700">
-              {references.map(ref => (
-                <div key={ref.id} className="flex items-start gap-2 p-2 bg-gray-50 rounded-lg">
-                  <Link2 className="h-4 w-4 mt-0.5 flex-shrink-0 text-blue-600" />
-                  <span className="text-sm text-gray-700">
-                    {ref.authors} ({ref.year}). <span className="font-medium">{ref.title}</span>. 
-                    <i> {ref.journal}</i>.{' '}
-                    <a 
-                      href={ref.link} 
-                      className="text-blue-600 hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Link
-                    </a>
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
-
-        {/* Glossary */}
-        <section className="bg-white p-4 rounded-lg border border-gray-200">
-          <button 
-            onClick={() => toggleSection('glossary')}
-            className="w-full flex items-center justify-between mb-2"
-          >
-            <div className="flex items-center gap-2">
-              <HelpCircle className="h-5 w-5 text-gray-700" />
-              <h2 className="font-medium text-gray-900 text-lg">Glossary of Terms</h2>
-            </div>
-            {expandedSections.glossary ? 
-              <ChevronDown className="h-4 w-4 text-gray-700" /> : 
-              <ChevronRight className="h-4 w-4 text-gray-700" />
-            }
-          </button>
-
-          {expandedSections.glossary && (
-            <div className="space-y-3 mt-4 text-sm text-gray-700">
-              {glossary.map((item, idx) => (
-                <div key={idx}>
-                  <strong>{item.term}:</strong> {item.definition}
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
 
         {/* Suggested Reading */}
         <section className="bg-white p-4 rounded-lg border border-gray-200">
