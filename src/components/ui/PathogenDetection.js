@@ -266,7 +266,7 @@ const PathogenDetection = () => {
 
       <CardContent className="px-4 pb-6 space-y-6">
         {/* Intro Box */}
-        <div className="bg-white p-4 rounded-lg border border-red-100 shadow-lg">
+        <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-lg">
           <div className="flex items-start gap-3">
             <Info className="h-5 w-5 text-red-600 mt-0.5" />
             <div className="space-y-2">

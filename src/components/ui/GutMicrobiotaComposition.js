@@ -60,37 +60,54 @@ const GutMicrobiotaComposition = ({
 
   // A helper to render a relative abundance bar
   const renderAbundanceBar = (abundance) => {
-    // Max scale used for demonstration; adjust as needed
     const maxAbundance = 30;
     const percentage = Math.min((abundance / maxAbundance) * 100, 100);
 
-    // Decide a color range (just for demonstration)
-    // - Low to high could be from teal to orange to red
-    const backgroundClass = 
+    const gradientClass = 
       percentage < 33 
-        ? 'bg-teal-400' 
+        ? 'bg-gradient-to-r from-orange-400 to-rose-600' 
         : percentage < 67 
-          ? 'bg-orange-400' 
-          : 'bg-red-500';
+            ? 'bg-gradient-to-r from-teal-400 to-teal-600'
+            : 'bg-gradient-to-r from-red-400 to-red-600'; 
+
+
 
     return (
-      <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+      <div className="relative w-full h-6 rounded-full overflow-hidden bg-gray-200">
         <div 
-          className={`${backgroundClass} h-3 absolute left-0 top-0`} 
+          className={`${gradientClass} h-full absolute left-0 top-0`} 
           style={{width: `${percentage}%`}}
         />
         <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-700 font-semibold">
-
         </span>
       </div>
     );
   };
 
+  const renderDysbiosisMeter = (label, value, gradientClass) => {
+    const percentage = Math.min((value / 10) * 100, 100);
+
+    return (
+      <div className="space-y-1">
+        <div className="flex justify-between items-center text-sm">
+          <span className="text-gray-800 font-medium">{label}</span>
+          <span className="text-xs text-gray-500">{value.toFixed(1)}</span>
+        </div>
+        <div className="relative w-full h-6 rounded-full overflow-hidden bg-gray-200">
+          <div 
+            className={`${gradientClass} h-full absolute left-0 top-0`} 
+            style={{width: `${percentage}%`}}
+          />
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <Card className="bg-gradient-to-br from-white via-white to-cyan-50 border-t-4 border-t-cyan-600 shadow-xl">
+    <Card className="bg-gradient-to-br from-white via-white to-teal-50 border-t-4 border-t-teal-600 shadow-xl">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-xl">
-          <FlaskConical className="h-5 w-5 text-cyan-500" /> {/* Replace Bacteria with FlaskConical */}
+          <FlaskConical className="h-5 w-5 text-teal-500" /> {/* Replace Bacteria with FlaskConical */}
           Key Findings
         </CardTitle>
         <CardDescription>
@@ -103,7 +120,7 @@ const GutMicrobiotaComposition = ({
           {/* Beneficial Microbes */}
           <div className="bg-white p-4 border border-gray-100 rounded-lg shadow-lg">
             <div className="flex items-center gap-2 mb-2">
-              <Smile className="h-5 w-5 text-green-500" />
+              <Smile className="h-5 w-5 text-teal-500" />
               <h3 className="font-semibold text-gray-800 text-base">
                 Beneficial Microbes
               </h3>
@@ -141,7 +158,7 @@ const GutMicrobiotaComposition = ({
           {/* Opportunistic Microbes */}
           <div className="bg-white p-4 border border-gray-100 rounded-md shadow-lg">
             <div className="flex items-center gap-2 mb-2">
-              <AlertTriangle className="h-5 w-5 text-red-500" />
+              <AlertTriangle className="h-5 w-5 text-rose-500" />
               <h3 className="font-semibold text-gray-800 text-base">
                 Opportunistic Microbes
               </h3>
@@ -180,7 +197,7 @@ const GutMicrobiotaComposition = ({
           {/* Dysbiosis Index */}
           <div className="bg-white p-4 border border-gray-100 rounded-md shadow-lg">
             <div className="flex items-center gap-2 mb-2">
-              <HeartPulse className="h-5 w-5 text-purple-500" />
+              <HeartPulse className="h-5 w-5 text-purple-800" />
               <h3 className="font-semibold text-gray-800 text-base">
                 Dysbiosis Index
               </h3>
@@ -211,7 +228,14 @@ const GutMicrobiotaComposition = ({
               </div>
             </div>
 
-            <div className="bg-gray-100 p-3 rounded-md text-sm text-purple-800 border border-purple-100 shadow-lg">
+            {/* Additional Meters */}
+            <div className="space-y-4">
+              {renderDysbiosisMeter('Beneficial Microbes', 3.0, 'bg-gradient-to-r from-teal-400 to-green-600')}
+              {renderDysbiosisMeter('Opportunistic Microbes', 6.5, 'bg-gradient-to-r from-orange-400 to-red-600')}
+              {renderDysbiosisMeter('Overall Balance', dysbiosisIndex, 'bg-gradient-to-r from-orange-200 to-yellow-600')}
+            </div>
+
+            <div className="bg-gray-100 p-3 rounded-md text-sm text-gray-800 border border-gray-200 shadow-lg mt-4">
               <strong>Interpretation Tip:</strong> 
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>
@@ -226,7 +250,6 @@ const GutMicrobiotaComposition = ({
               </ul>
             </div>
           </div>
-
 
           {/* Intro / Explanation */}
           <div className="bg-white p-4 border border-gray-100 rounded-md shadow-lg text-sm text-gray-700 space-y-2">
@@ -247,7 +270,6 @@ const GutMicrobiotaComposition = ({
               and probiotic choices to restore balance and promote gut health.
             </p>
           </div>
-
 
         </div>
       </CardContent>

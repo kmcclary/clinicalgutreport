@@ -504,7 +504,7 @@ const LifestyleRecommendationsSection = () => {
             <div className="mt-6 text-center">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-md hover:from-indigo-600 hover:to-purple-700 transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-indigo-500 to-blue-600 text-white rounded-md hover:from-indigo-600 hover:to-purple-700 transition-all duration-200"
               >
                 {showAll ? 'Show Less' : 'Show More'}
               </button>

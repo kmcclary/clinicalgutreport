@@ -6,7 +6,7 @@ const AnalysisOverview = ({ analysisData }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Card className="rounded-xl bg-gradient-to-br from-white to-gray-50 shadow-xl border border-gray-200 border-t-4 border-t-green-600">
+    <Card className="rounded-xl bg-gradient-to-br from-white to-gray-50 shadow-xl border border-gray-200 border-t-4 border-t-purple-600">
       <CardHeader>
         <div 
           onClick={() => setIsOpen(!isOpen)}
@@ -14,7 +14,7 @@ const AnalysisOverview = ({ analysisData }) => {
         >
           <div>
             <CardTitle className="flex items-center gap-2 text-xl">
-              <BarChart2 className="h-5 w-5 text-green-600" />
+              <BarChart2 className="h-5 w-5 text-purple-600" />
               Technical Overview
             </CardTitle>
 

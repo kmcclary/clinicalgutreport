@@ -162,18 +162,18 @@ const commensalMicrobes = [
 ];
 
 const AbundanceIndicator = ({ percentage }) => {
-  const getColor = (percent) => {
-    if (percent >= 80) return "bg-green-500";
-    if (percent >= 60) return "bg-green-400";
-    if (percent >= 40) return "bg-yellow-400";
-    if (percent >= 20) return "bg-orange-400";
-    return "bg-red-400";
+  const getGradientClass = (percent) => {
+    if (percent >= 80) return "bg-gradient-to-r from-green-400 to-green-600";
+    if (percent >= 60) return "bg-gradient-to-r from-teal-400 to-teal-600";
+    if (percent >= 40) return "bg-gradient-to-r from-yellow-400 to-yellow-600";
+    if (percent >= 20) return "bg-gradient-to-r from-orange-400 to-orange-600";
+    return "bg-gradient-to-r from-red-400 to-red-600";
   };
 
   return (
     <div className="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
       <div
-        className={`absolute left-0 top-0 h-full ${getColor(percentage)} transition-all duration-500`}
+        className={`absolute left-0 top-0 h-full ${getGradientClass(percentage)} transition-all duration-500`}
         style={{ width: `${percentage}%` }}
       />
       <div className="absolute right-2 top-0 text-xs font-medium text-gray-700 leading-4">
