@@ -432,7 +432,7 @@ const RecommendedProbioticsSection = () => {
             <div className="mt-6 text-center">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-500 to-purple-800 text-white rounded-md hover:from-purple-600 hover:to-emerald-700 transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-500 to-purple-800 text-white rounded-md hover:from-purple-600 hover:to-purple-700 transition-all duration-200"
               >
                 {showAll ? 'Show Less' : 'Show More'}
               </button>
