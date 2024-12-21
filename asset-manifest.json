@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/clinicalgutreport/static/css/main.35b78a6c.css",
-    "main.js": "/clinicalgutreport/static/js/main.ac1dfc09.js",
+    "main.js": "/clinicalgutreport/static/js/main.6f820abb.js",
     "static/media/zl.png": "/clinicalgutreport/static/media/zl.6264465750bd10702e7d.png",
     "index.html": "/clinicalgutreport/index.html",
     "main.35b78a6c.css.map": "/clinicalgutreport/static/css/main.35b78a6c.css.map",
-    "main.ac1dfc09.js.map": "/clinicalgutreport/static/js/main.ac1dfc09.js.map"
+    "main.6f820abb.js.map": "/clinicalgutreport/static/js/main.6f820abb.js.map"
   },
   "entrypoints": [
     "static/css/main.35b78a6c.css",
-    "static/js/main.ac1dfc09.js"
+    "static/js/main.6f820abb.js"
   ]
 }
