@@ -106,20 +106,23 @@ const ComponentsOverview = () => {
 
   return (
     <div className="space-y-8">
+
+<div>
+            <h1 className="text-2xl font-bold text-blue-900">GutSignature™</h1>
+            <p className="text-sm text-gray-600">
+              Advanced Microbiome Health Screening
+            </p>
+          </div>
       {/* Patient Info */}
       <div id="patient-info" className="component-section">
         <PatientInfoDropdown patientData={patientData} />
       </div>
 
       {/* Executive Summary */}
-      <div id="executive-summary" className="component-section">
-        <ExecutiveSummary />
-      </div>
+      <ExecutiveSummary />
 
       {/* Analysis Overview */}
-      <div id="analysis-overview" className="component-section">
-        <AnalysisOverview analysisData={analysisData} />
-      </div>
+      <AnalysisOverview analysisData={analysisData} />
 
       {/* Gut Microbiota Composition */}
       <div id="gut-microbiota" className="component-section">
