@@ -8,7 +8,8 @@ import {
   AlertCircle,
   ArrowRight,
   Clock,
-  BookOpen
+  BookOpen,
+  TreePine
 } from 'lucide-react';
 
 const RecommendedProbioticsSection = () => {
@@ -260,7 +261,7 @@ const RecommendedProbioticsSection = () => {
         <Card className="bg-gradient-to-br from-white to-purple-50 border-t-4 border-t-purple-600 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Flame className="h-5 w-5 text-purple-500" />
+              <TreePine className="h-5 w-5 text-purple-500" />
               <span className="text-gray-800 text-xl">
                 Probiotics Recommendations
               </span>

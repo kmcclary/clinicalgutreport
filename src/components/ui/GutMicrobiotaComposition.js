@@ -111,7 +111,7 @@ const GutMicrobiotaComposition = ({
           Key Findings
         </CardTitle>
         <CardDescription>
-          Overview of Beneficial vs. Opportunistic Bacteria and Dysbiosis Level
+          Overview of Beneficial vs. Opportunistic Bacteria
         </CardDescription>
       </CardHeader>
       <CardContent>

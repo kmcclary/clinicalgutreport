@@ -8,7 +8,8 @@ import {
   AlertCircle, 
   ArrowRight, 
   Clock, 
-  BookOpen 
+  BookOpen,
+  Activity 
 } from 'lucide-react';
 
 const LifestyleRecommendationsSection = () => {
@@ -338,7 +339,7 @@ const LifestyleRecommendationsSection = () => {
         <Card className="bg-gradient-to-br from-white to-indigo-50 border-t-4 border-t-blue-600 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Flame className="h-5 w-5 text-indigo-500" />
+              <Activity className="h-5 w-5 text-indigo-500" />
               <span className="text-gray-800 text-xl">
                 Lifestyle Recommendations
               </span>

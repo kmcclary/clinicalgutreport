@@ -5,7 +5,8 @@ import {
   AlertCircle,
   TrendingUp,
   Activity,
-  BookOpen
+  BookOpen,
+  List
 } from 'lucide-react';
 
 const ConclusionPage = () => {
@@ -13,7 +14,7 @@ const ConclusionPage = () => {
     <Card className="rounded-xl bg-gradient-to-br from-white via-cyan-50 to-green-100 shadow-xl border border-gray-200 border-t-4 border-t-cyan-600 shadow-md ">
       <CardHeader className="p-4">
         <CardTitle className="flex items-center gap-2">
-          <Activity className="h-6 w-6 text-gray-600" />
+          <List className="h-6 w-6 text-gray-600" />
           <span className="bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent text-lg font-semibold">
             Conclusion & Next Steps
           </span>

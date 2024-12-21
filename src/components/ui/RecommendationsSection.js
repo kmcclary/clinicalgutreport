@@ -9,6 +9,10 @@ import {
   ArrowRight,
   Clock,
   BookOpen,
+  List,
+  Utensils,
+  Activity,
+  TreePine
 } from 'lucide-react';
 
 const RecommendationsSection = () => {
@@ -357,7 +361,7 @@ const RecommendationsSection = () => {
         <Card className="bg-gradient-to-br from-white to-rose-50  border-t-4 border-t-rose-600 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Flame className="h-5 w-5 text-rose-500" />
+              <Utensils className="h-5 w-5 text-rose-500" />
               <span className="text-gray-800 text-xl">
                 Diet Recommendations
               </span>
