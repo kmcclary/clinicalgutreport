@@ -68,7 +68,7 @@ const reportData = {
 };
 
 const App = () => (
-  <BrowserRouter basename="/guthealthreport">
+  <BrowserRouter basename="/clinicalgutreport">
     <BannerNavBar />
     <div className="bg-transparent min-h-screen pt-16 md:pt-16 w-full max-w-4xl mx-auto bg-white p-4 md:p-8 space-y-6 md:space-y-8">
       <Routes>
